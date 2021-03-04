@@ -1,0 +1,410 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+
+.section-register {
+  text-align: center;
+
+  &__container {
+    @include section-container;
+    max-width: 1140px;
+    height: 730px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    @include respond-to("xsmall") {
+      width: 100%;
+      height: 520px;
+      justify-content: flex-end;
+    }
+  }
+
+  &__header {
+    @include h1;
+    text-align: left;
+    line-height: 77px;
+    max-width: 670px;
+    width: 100%;
+
+    @include respond-to("xsmall") {
+      line-height: 38px;
+      padding: 40px 20px 10px;
+    }
+  }
+
+  &__content {
+    font-size: 24px;
+    line-height: 35px;
+    max-width: 925px;
+    text-align: left;
+    padding: 30px 0px 40px 0px;
+    max-width: 532px;
+
+    @include respond-to("xsmall") {
+      font-size: 16px;
+      line-height: 24px;
+      padding: 0px 20px;
+    }
+  }
+
+  &:before {
+    content: "";
+    background: url("../css/img/car001.png") no-repeat;
+    position: absolute;
+    height: 812px;
+    width: 900px;
+    top: 0;
+    z-index: -1;
+    right: 0;
+
+    @include respond-to("xsmall") {
+      background: url("../css/img/car001-small.png") no-repeat;
+      width: 375px;
+    }
+  }
+}
+
+.section-info {
+  height: 1468px;
+  @include respond-to("xsmall") {
+    height: 1029px;
+  }
+
+  &__container {
+    @include section-container;
+    max-width: 1140px;
+    height: 100%;
+  }
+
+  &__list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  &__list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include respond-to("xsmall") {
+      flex-direction: column;
+      padding: 20px 30px 20px 30px;
+    }
+
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+      @include respond-to("xsmall") {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__list-header {
+    @include h2;
+    text-align: left;
+  }
+
+  &__list-image {
+    @include respond-to("xsmall") {
+      width: 246px;
+    }
+  }
+
+  &__list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 420px;
+    width: 100%;
+
+    @include respond-to("xsmall") {
+      padding: 25px 0px 0px 0px;
+    }
+  }
+
+  &__list-content {
+    font-size: 20px;
+    line-height: 147.3%;
+    color: $gray-dark;
+    padding: 20px 0px;
+
+    @include respond-to("xsmall") {
+      font-size: 14px;
+    }
+  }
+}
+
+.section-rent {
+  text-align: center;
+  height: 552px;
+  background-color: $gray-light;
+
+  @include respond-to("xsmall") {
+    height: 287px;
+  }
+
+  &__container {
+    @include section-container;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__header {
+    @include h2;
+    padding: 0px 0px 80px 0px;
+
+    @include respond-to("xsmall") {
+      padding: 0px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+
+    @include respond-to("xsmall") {
+      flex-direction: column;
+    }
+  }
+
+  &__list-item {
+    font-size: 24px;
+    line-height: 147.3%;
+    width: 150px;
+    position: relative;
+
+    @include respond-to("xsmall") {
+      font-size: 14px;
+      width: 100%;
+      height: 60px;
+      text-align: left;
+    }
+
+    &:before {
+      content: attr(data-number);
+      width: 28px;
+      height: 38px;
+      background-color: $green;
+      border-radius: 50%;
+      display: inline-block;
+      color: $white-100;
+      margin: 0px auto 26px;
+      font-size: 48px;
+      padding: 35px 40px;
+      z-index: 1;
+      position: relative;
+
+      @include respond-to("xsmall") {
+        margin: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        width: 12px;
+        height: 20px;
+        padding: 6px 10px;
+      }
+    }
+
+    &:not(:last-child):after {
+      content: "";
+      border-top: 1px dashed #9d9aac;
+      width: 200%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      top: 25%;
+      transform: translate(25%, 8px);
+      z-index: 0;
+
+      @include respond-to("xsmall") {
+        border-top: 0px;
+        border-left: 1px dashed #9d9aac;
+        transform: translate(35px, 8px);
+      }
+    }
+  }
+}
+
+.section-rentout {
+  text-align: center;
+  height: 618px;
+
+  @include respond-to("xsmall") {
+    height: 397px;
+  }
+
+  &__container {
+    @include section-container;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__header {
+    @include h2;
+    padding: 0px 0px 21px 0px;
+  }
+
+  &__content {
+    padding: 0px 0px 80px 0px;
+    font-size: 24px;
+    line-height: 147.3%;
+
+    @include respond-to("xsmall") {
+      font-size: 14px;
+      text-align: left;
+      padding: 0px 20px 0px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+
+    @include respond-to("xsmall") {
+      flex-direction: column;
+    }
+  }
+
+  &__list-item {
+    font-size: 24px;
+    line-height: 147.3%;
+    width: 190px;
+    position: relative;
+
+    @include respond-to("xsmall") {
+      font-size: 14px;
+      width: 100%;
+      height: 60px;
+      text-align: left;
+    }
+
+    &:nth-child(1):before {
+      content: "\e90b";
+      width: 38px;
+      padding: 35px 35px;
+
+      @include respond-to("xsmall") {
+        width: 12px;
+        height: 20px;
+        padding: 6px 10px;
+      }
+    }
+
+    &:nth-child(2):before {
+      content: "\e908";
+      width: 18px;
+      padding: 35px 45px;
+
+      @include respond-to("xsmall") {
+        width: 8px;
+        height: 20px;
+        padding: 6px 12px;
+      }
+    }
+
+    &:nth-child(3):before {
+      content: "\e90a";
+      width: 38px;
+      padding: 35px 35px;
+
+      @include respond-to("xsmall") {
+        width: 12px;
+        height: 20px;
+        padding: 6px 10px;
+      }
+    }
+
+    &:nth-child(4):before {
+      width: 47px;
+      padding: 35px 30px;
+      content: "\e909";
+
+      @include respond-to("xsmall") {
+        width: 16px;
+        height: 20px;
+        padding: 6px 8px;
+      }
+    }
+
+    &:before {
+      font-family: "icons";
+      background-color: $green;
+      border-radius: 50%;
+      display: block;
+      color: $white-100;
+      margin: 0px auto 26px;
+      height: 38px;
+      font-size: 38px;
+      z-index: 1;
+      position: relative;
+
+      @include respond-to("xsmall") {
+        display: inline-block;
+        margin: 20px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+
+    &:not(:last-child):after {
+      content: "";
+      border-top: 1px dashed #9d9aac;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      top: 25%;
+      transform: translate(50%, 8px);
+      z-index: 0;
+
+      @include respond-to("xsmall") {
+        border-top: 0px;
+        border-left: 1px dashed #9d9aac;
+        transform: translate(35px, 8px);
+      }
+    }
+  }
+}
+
+.section-tryout {
+  &__container {
+    @include section-container;
+    height: 762px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include respond-to("xsmall") {
+      height: 519px;
+    }
+  }
+
+  &__header {
+    @include h2;
+    padding: 56px 0px 40px 0px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    max-width: $section-image-maxwidth;
+    max-height: $section-image-maxheight;
+
+    @include respond-to("xsmall") {
+      max-width: $section-image-maxwidth * 0.67;
+      max-height: $section-image-maxheight * 0.67;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import "variables";
+@import "mixins";
+
+//this section refers to page footer
+/* footer */
+.footer {
+  width: 100%;
+  height: 125px;
+  background: #3F3D56;
+
+  &__container {
+    @include hf-container;
+    justify-content: space-between;
+
+    @include respond-to('xsmall') {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+    }
+  }
+
+  &__copyright {
+    font-size: 16px;
+    line-height: 19px;
+    color: $white-100;
+    opacity: 0.4;
+  }
+
+  &__social-icon {
+    @include link($white-100, transparentize($white-100, 0.4));
+    display: inline-block;
+    font-size: 32px;
+    padding: 0px 0px 0px 16px;
+
+    @include respond-to('xsmall') {
+      font-size: 26px;
+      padding: 16px 19px 0px 0px;
+    }
+  }
+}
+/* end of footer */
+
+.main {
+  padding-top: 90px;
+
+  @include respond-to('xsmall') {
+    padding-top: 68px;
+  }
+}

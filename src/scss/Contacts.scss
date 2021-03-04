@@ -1,0 +1,88 @@
+@import "variables";
+@import "mixins";
+
+/* section CONTACTS */
+.section-contacts {
+  padding: 80px 0px 104px 0px;
+  background-color: $gray-light;
+
+  @include respond-to("xsmall") {
+    padding: 40px 0px;
+  }
+
+  &__container {
+    @include section-container;
+  }
+
+  &__header {
+    @include h2;
+    padding-bottom: 43px;
+
+    @include respond-to("xsmall") {
+      padding-bottom: 0px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @include respond-to("xsmall") {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    height: 62px;
+    padding: 0px 69px;
+    width: 264px;
+    text-align: center;
+
+    @include respond-to("xsmall") {
+      height: inherit;
+      width: 100%;
+      padding: 20px 0px 0px 0px;
+    }
+
+    &_lg-border-right {
+      border-right: 1px solid #c8c8cf;
+
+      @include respond-to("xsmall") {
+        border-right: 0;
+      }
+    }
+  }
+}
+
+.contact {
+  &__header {
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    padding-bottom: 6px;
+    color: #4f4f4f;
+
+    @include respond-to("xsmall") {
+      font-size: 12px;
+      line-height: 18px;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__content {
+    font-size: 20px;
+    line-height: 29px;
+
+    @include respond-to("xsmall") {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  &__link {
+    @include link($black-100, $green);
+  }
+}
+
+/* end of section CONTACTS */

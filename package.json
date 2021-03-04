@@ -1,0 +1,36 @@
+{
+  "name": "webpack-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-sass": "node-sass ./src/scss/ -o ./src/css/ --output-style=expanded --source-map=true --indent-type=space --indent-width=2",
+    "watch-sass": "node-sass --watch ./src/scss/ -o ./src/css/ --output-style=expanded --source-map=true --indent-type=space --indent-width=2",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode-production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.3.0",
+    "react": "^16.13.1",
+    "react-awesome-slider": "^4.1.0",
+    "react-dom": "^16.13.1",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "react-router-dom": "^5.2.0"
+  }
+}

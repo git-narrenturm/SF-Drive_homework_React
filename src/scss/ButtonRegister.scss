@@ -1,0 +1,23 @@
+@import "mixins";
+
+.section-register__button,
+.section-try__button {
+  @include button($white-100, $green, $green);
+  padding: 12px 30px;
+  width: 237px;
+  height: 43px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+
+  @include respond-to("xsmall") {
+    width: calc(100% - 40px);
+    margin: 25px 20px;
+  }
+
+  &:hover {
+    @include button($green, $white-100, $green);
+    transition: all 0.1s ease-in;
+  }
+}

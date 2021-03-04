@@ -1,0 +1,116 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+
+.section-reviews {
+  background-color: $gray-light;
+
+  &__header {
+    @include h2;
+    padding: 0px 0px 58px 0px;
+
+    @include respond-to("xsmall") {
+      padding: 0px 0px 30px 0px;
+    }
+  }
+
+  &__container {
+    @include section-container;
+    height: 599px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include respond-to("xsmall") {
+      height: 403px;
+    }
+  }
+
+  &__carousel {
+    height: 283px;
+  }
+
+  .carousel {
+    &__arrow-right {
+      transform: rotate(270deg);
+
+      &:before {
+        color: $green;
+      }
+    }
+    &__arrow-left {
+      transform: rotate(90deg);
+      &:before {
+        color: $green;
+      }
+    }
+  }
+
+  &__carousel-item {
+    background-color: $white-100;
+    width: 100%;
+    max-width: 578px;
+    height: 169px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 30px 75px 39px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include respond-to("xsmall") {
+      margin: 20px;
+      padding: 20px;
+      height: 229px;
+      max-width: 285px;
+    }
+  }
+}
+
+.carousel-item {
+  &__container {
+    display: flex;
+  }
+
+  &__header {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0px 0px 0px 20px;
+  }
+
+  &__details {
+    font-size: 14px;
+    line-height: 147.3%;
+    color: #636780;
+  }
+
+  &__content {
+    font-size: 16px;
+    line-height: 147.3%;
+    padding: 18px 0px 0px 75px;
+
+    @include respond-to("xsmall") {
+      font-size: 14px;
+      padding: 10px 0px 0px 0px;
+    }
+  }
+}
+
+.awssld__content {
+  background-color: transparent;
+}
+
+.awssld__bullets {
+  bottom: -20px;
+}
+
+.awssld__bullets button {
+  background: #3f3d56;
+  opacity: 0.4;
+  width: 10px;
+  height: 10px;
+
+  &--active {
+    opacity: 1;
+  }
+}

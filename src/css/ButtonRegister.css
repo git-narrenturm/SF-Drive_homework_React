@@ -1,0 +1,33 @@
+.section-register__button,
+.section-try__button {
+  color: #FFFFFF;
+  background-color: #61A199;
+  border: 1px solid #61A199;
+  cursor: pointer;
+  padding: 12px 30px;
+  width: 237px;
+  height: 43px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 375px) {
+  .section-register__button,
+  .section-try__button {
+    width: calc(100% - 40px);
+    margin: 25px 20px;
+  }
+}
+
+.section-register__button:hover,
+.section-try__button:hover {
+  color: #61A199;
+  background-color: #FFFFFF;
+  border: 1px solid #61A199;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+/*# sourceMappingURL=ButtonRegister.css.map */

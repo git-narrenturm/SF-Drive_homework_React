@@ -1,0 +1,25 @@
+@import "fonts";
+
+body,
+h1,
+h2,
+ul,
+ol,
+p {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #1B1B1B;
+}
+
+.body {
+  height: 100%;
+  width: 100%;
+  font-weight: 400;
+  letter-spacing: 0em;
+  font-style: normal;
+
+  &_overflow-none {
+    overflow: hidden;
+  }
+}

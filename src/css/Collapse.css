@@ -1,0 +1,101 @@
+/* FAQ collapse set */
+.section-faq__collapse-set {
+  padding: 60px 0px 40px;
+  width: 100%;
+  max-width: 1026px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.collapse-set__item {
+  padding: 0px 0px 14px;
+}
+
+@media (max-width: 375px) {
+  .collapse-set__item {
+    padding: 0px 20px 15px;
+  }
+}
+
+.collapse-set__button {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #F7F7F8;
+  border: 0;
+  width: 100%;
+  padding: 19px 27px 18px 22px;
+  font-size: 20px;
+  color: #1B1B1B;
+  line-height: 147.3%;
+  text-align: left;
+  border-radius: 6px;
+  outline: 0;
+}
+
+@media (max-width: 375px) {
+  .collapse-set__button {
+    font-size: 14px;
+  }
+}
+
+.collapse-set__button:after {
+  font-family: "icons";
+  content: "\e905";
+  color: #A0A7AD;
+  font-size: 11px;
+  transform: rotate(0deg);
+  transition: transform ease 0.3s, color ease 0.3s;
+}
+
+@media (max-width: 375px) {
+  .collapse-set__button:after {
+    font-size: 9px;
+  }
+}
+
+.collapse-set__button:hover {
+  background-color: rgba(97, 161, 153, 0.1);
+  color: #61A199;
+  cursor: pointer;
+}
+
+.collapse-set__button_is-active {
+  background: rgba(97, 161, 153, 0.15);
+  color: #61A199;
+}
+
+.collapse-set__button_is-active:after {
+  color: #61A199;
+  transform: rotate(180deg);
+  transition: all ease 300ms;
+}
+
+.collapse-set__content {
+  font-size: 20px;
+  line-height: 147.3%;
+  color: #1B1B1B;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+@media (max-width: 375px) {
+  .collapse-set__content {
+    font-size: 14px;
+  }
+}
+
+.collapse-set__text {
+  padding: 20px 22px;
+}
+
+@media (max-width: 375px) {
+  .collapse-set__text {
+    padding: 15px 20px;
+  }
+}
+
+/* end of FAQ collapse set */
+
+/*# sourceMappingURL=Collapse.css.map */

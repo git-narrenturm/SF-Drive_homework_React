@@ -1,0 +1,89 @@
+@import "variables";
+
+//mixin to manage responsive breakpoints
+@mixin respond-to($breakpoint) {
+  //if the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    //prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+}
+
+//mixin to manage H1
+@mixin h1 {
+  font-size: $h1-font-size;
+  font-weight: 700;
+  line-height: 77px;
+  text-align: center;
+
+  @include respond-to('xsmall') {
+    font-size: $h1-font-size / 2;
+    font-weight: 500;
+    line-height: 38px;
+  }
+}
+
+//mixin to manage H2
+@mixin h2 {
+  font-size: $h2-font-size;
+  line-height: $h2-line-height;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0em;
+  text-align: center;
+
+  @include respond-to('xsmall') {
+    font-size: $h2-font-size / 2;
+    line-height: $h2-line-height / 2;
+  }
+}
+
+//mixin to manage button's text color, background color and border color
+@mixin button($font-color, $background-color, $border-color) {
+  color: $font-color;
+  background-color: $background-color;
+  border: 1px solid $border-color;
+  cursor: pointer;
+}
+
+//mixin to manage link's default color and link color on hover
+@mixin link($font-color, $hover-color) {
+  color: $font-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+//mixin to manage section container
+@mixin section-container {
+  width: 100%;
+  max-width: $section-max-width;
+  margin: 0 auto;
+}
+
+
+//mixin to manage header & footer container
+@mixin hf-container {
+  $padding-left: 40px;
+  $padding-right: 40px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0px $padding-left 0px $padding-right;
+
+  @include respond-to('xsmall') {
+    $padding-left: 20px;
+    $padding-right: 20px;
+    padding: 0px $padding-left 0px $padding-right;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,97 @@
+@import "variables";
+@import "mixins";
+
+/* FAQ collapse set */
+.section-faq__collapse-set {
+  padding: 60px 0px 40px;
+  width: 100%;
+  max-width: 1026px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.collapse-set {
+
+  &__item {
+    padding: 0px 0px 14px;
+
+    @include respond-to('xsmall') {
+      padding: 0px 20px 15px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #F7F7F8;
+    border: 0;
+    width: 100%;
+    padding: 19px 27px 18px 22px;
+    font-size: 20px;
+    color: #1B1B1B;
+    line-height: 147.3%;
+    text-align: left;
+    border-radius: 6px;
+    outline: 0;
+
+    @include respond-to('xsmall') {
+      font-size: 14px;
+    }
+
+    &:after {
+      font-family: "icons";
+      content: "\e905";
+      color: #A0A7AD;
+      font-size: 11px;
+      transform: rotate(0deg);
+      transition: transform ease 0.3s, color ease 0.3s;
+
+      @include respond-to('xsmall') {
+        font-size: 9px;
+      }
+    }
+
+    &:hover {
+      background-color: rgba(97, 161, 153, 0.1);
+      color: $green;
+      cursor: pointer;
+    }
+
+    &_is-active {
+      background: rgba(97, 161, 153, 0.15);
+      color: $green;
+
+      &:after {
+        color: $green;
+        transform: rotate(180deg);
+        transition: all ease 300ms;
+      }
+    }
+
+  }
+
+  &__content {
+    font-size: 20px;
+    line-height: 147.3%;
+    color: $gray-dark;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+
+    @include respond-to('xsmall') {
+      font-size: 14px;
+    }
+  }
+
+  &__text {
+    padding: 20px 22px;
+
+    @include respond-to('xsmall') {
+      padding: 15px 20px;
+    }
+  }
+
+}
+
+/* end of FAQ collapse set */

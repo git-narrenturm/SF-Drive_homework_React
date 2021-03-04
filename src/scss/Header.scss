@@ -1,0 +1,150 @@
+@import "variables";
+@import "mixins";
+
+//this section refers to page header and navigation bar
+/* header */
+.header {
+  width: 100%;
+  height: 90px;
+  background: transparentize($white-100, 0.05);
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  @include respond-to('xsmall') {
+    height: 68px;
+  }
+
+  &__container {
+    @include hf-container;
+  }
+
+  &__logo {
+    font-size: 28px;
+    color: #1B1B1B;
+  }
+
+  &__button {
+    @include button($gray-dark, $white-100, transparentize($gray-dark, 0.6));
+    padding: 12px 30px;
+    width: 106px;
+    height: 43px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+
+    @include respond-to('xsmall') {
+      width: calc(100% - 40px);
+      position: fixed;
+      margin: 0 auto;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    &:hover {
+      @include button($white-100, $green, $green);
+      transition: all  0.1s ease-in;
+    }
+
+  }
+
+  &__menu-list {
+    $self: &;
+    font-family: "icons";
+    content: "";
+    display: none;
+    color: $black-100;
+    font-size: 26px;
+    cursor: pointer;
+
+    @include respond-to('xsmall') {
+      display: flex;
+    }
+
+    &:before {
+      content: "\e900";
+    }
+
+    &_is-active#{$self}:before {
+      font-size: 16px;
+      content: "\e906";
+    }
+  }
+
+}
+/* end of header */
+
+/* navigation bar */
+.menu__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+
+  @include respond-to('xsmall') {
+    display: none;
+    position: fixed;
+    top: $header-height;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    max-height: calc(100% - #{$header-height});
+    text-align: center;
+    justify-content: center;
+    background: transparentize($white-100, 0.05);
+
+    &_is-opened {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+
+  @include respond-to('xsmall') {
+    margin-top: $header-height * -1;
+  }
+
+  &__menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0px 40px;
+
+    @include respond-to('xsmall') {
+      flex-direction: column;
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+
+  &__item {
+    @include respond-to('xsmall') {
+      padding: 0px 0px 37px;
+    }
+  }
+
+  &__link {
+    @include link($gray-dark, $green);
+    font-size: 16px;
+    line-height: 19px;
+    padding-left: 30px;
+    border-bottom: 0;
+
+    @include respond-to('xsmall') {
+      padding: 0;
+    }
+
+    &_is-active {
+      color: $green;
+    }
+
+  }
+
+}
+/* end of navigation bar */
