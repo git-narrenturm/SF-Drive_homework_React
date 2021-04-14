@@ -1,29 +1,41 @@
 {
   "name": "webpack-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "Это учебный проект, созданный с целью получения боевого опыта в разработке настоящего живого веб-приложения. Этот сервис имитирует работу каршеринга, в котором можно не только арендовать автомобили, но и сдавать их в аренду.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-sass": "node-sass ./src/scss/ -o ./src/css/ --output-style=expanded --source-map=true --indent-type=space --indent-width=2",
     "watch-sass": "node-sass --watch ./src/scss/ -o ./src/css/ --output-style=expanded --source-map=true --indent-type=space --indent-width=2",
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode-production"
+    "server": "nodemon ./src/server/index.js",
+    "watch-webpack": "webpack-dev-server --mode development --open",
+    "build-webpack": "webpack --mode-production"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jeļena Rassohina",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "axios": "^0.21.1",
     "babel-loader": "^8.1.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
     "css-loader": "^4.2.1",
+    "express": "^4.17.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.3.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.3",
     "react": "^16.13.1",
     "react-awesome-slider": "^4.1.0",
+    "react-date-picker": "^8.1.1",
+    "react-datepicker": "^3.7.0",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
     "sass-loader": "^10.1.1",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
@@ -32,7 +44,8 @@
   },
   "devDependencies": {
     "chalk": "^2.4.2",
-    "react-router-dom": "^5.2.0",
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.7",
     "yargs": "^13.3.2"
   }
 }

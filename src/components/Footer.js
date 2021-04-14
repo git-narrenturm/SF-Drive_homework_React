@@ -1,8 +1,16 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 import "../css/Footer.css";
 
 const Footer = () => {
+
+  const location = useLocation();
+  if(location.pathname == "/register" || location.pathname == "/success") {
+    return (
+      <></>
+    );
+  };
 
   return (
     <footer className="footer">
