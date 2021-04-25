@@ -25,8 +25,13 @@
 
 @media (max-width: 375px) {
   .section-registration-success__header {
-    line-height: 38px;
-    padding: 40px 0px 10px 0px;
+    padding: 42px 0px 15px 0px;
+  }
+}
+
+@media (max-width: 375px) {
+  .section-registration-success__image {
+    width: 307px;
   }
 }
 
@@ -34,6 +39,14 @@
   font-size: 24px;
   text-align: center;
   padding: 0px 0px 114px;
+  line-height: 147.3%;
+}
+
+@media (max-width: 375px) {
+  .section-registration-success__text {
+    font-size: 16px;
+    padding: 0px 20px;
+  }
 }
 
 .section-registration-success__button {
@@ -53,7 +66,7 @@
 @media (max-width: 375px) {
   .section-registration-success__button {
     width: calc(100% - 40px);
-    margin: 25px 20px;
+    margin: 64px 20px 25px;
   }
 }
 

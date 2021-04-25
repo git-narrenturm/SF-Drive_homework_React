@@ -14,8 +14,13 @@
     padding: 61px 0px 30px 0px;
 
     @include respond-to("xsmall") {
-      line-height: 38px;
-      padding: 40px 0px 10px 0px;
+      padding: 42px 0px 15px 0px;
+    }
+  }
+
+  &__image {
+    @include respond-to("xsmall") {
+      width: 307px;
     }
   }
 
@@ -23,6 +28,12 @@
     font-size: 24px;
     text-align: center;
     padding: 0px 0px 114px;
+    line-height: 147.3%;
+
+    @include respond-to("xsmall") {
+      font-size: 16px;
+      padding: 0px 20px;
+    }
   }
 
   &__button {
@@ -37,7 +48,7 @@
 
     @include respond-to("xsmall") {
       width: calc(100% - 40px);
-      margin: 25px 20px;
+      margin: 64px 20px 25px;
     }
 
     &:hover {
