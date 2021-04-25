@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "09ed8b98-073f-4862-b69c-90acb705b3fb",
+		"name": "SkillDrive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"personName\": \"Иван Иванович Иванов\",\r\n    \"personBirthDate\": \"1982-01-01\",\r\n    \"personEmail\": \"test@test.com\",\r\n    \"personPhone\": \"79001234567\",\r\n    \"passportNumber\":\"2312343213\",\r\n    \"passportIssueDate\":\"2020-01-01\",\r\n    \"passportIssuer\":\"Отдел №3\",\r\n    \"passportIssuerNumber\":\"000124\",\r\n    \"drivingLicence\":\"1234567890\",\r\n    \"drivingLicenceIssueDate\":\"2020-12-01\",\r\n    \"password\":\"someeasypassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

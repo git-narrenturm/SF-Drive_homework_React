@@ -2,11 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  mode: "development",
   entry: "./src/index.js",
   output: {
     path: path.join(__dirname, "/dist"),
-    filename: "bundle.js",
-    publicPath: '/'
+    filename: "bundle.js"
   },
   module: {
     rules: [
@@ -45,7 +45,14 @@ module.exports = {
     ]
   },
   devServer: {
+    port: 8081,
     historyApiFallback: true,
+    proxy: [{
+      context: ['/api'],
+      target: 'http://localhost:8080',
+      secure: false,
+      changeOrigin: false
+    }]
   },
   plugins: [
     new HtmlWebpackPlugin({

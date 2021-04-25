@@ -1,0 +1,68 @@
+.section-registration-success {
+  padding: 103px 0px 100px;
+  width: 100%;
+  max-width: 676px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-registration-success__header {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 77px;
+  text-align: center;
+  line-height: 77px;
+  padding: 61px 0px 30px 0px;
+}
+
+@media (max-width: 375px) {
+  .section-registration-success__header {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 38px;
+  }
+}
+
+@media (max-width: 375px) {
+  .section-registration-success__header {
+    line-height: 38px;
+    padding: 40px 0px 10px 0px;
+  }
+}
+
+.section-registration-success__text {
+  font-size: 24px;
+  text-align: center;
+  padding: 0px 0px 114px;
+}
+
+.section-registration-success__button {
+  color: #FFFFFF;
+  background-color: #61A199;
+  border: 1px solid #61A199;
+  cursor: pointer;
+  padding: 12px 30px;
+  width: 237px;
+  height: 43px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media (max-width: 375px) {
+  .section-registration-success__button {
+    width: calc(100% - 40px);
+    margin: 25px 20px;
+  }
+}
+
+.section-registration-success__button:hover {
+  color: #61A199;
+  background-color: #FFFFFF;
+  border: 1px solid #61A199;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+/*# sourceMappingURL=RegisterSuccess.css.map */

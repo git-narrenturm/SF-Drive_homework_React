@@ -22,6 +22,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-calendar:before {
+  content: "\e90c";
+  color: #61a199;
+}
+
+.icon-eye:before {
+  content: "\e90d";
+  color: #61a199;
+}
+
 .icon-dot:before {
   content: "\e907";
   color: #3f3d56;

@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 import "../css/Header.css";
 
-
-
 const Header = () => {
 
   const handleClick = () => {

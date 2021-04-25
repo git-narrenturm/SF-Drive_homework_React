@@ -95,28 +95,41 @@
   font-family: "Roboto";
 }
 
-body,
-h1,
-h2,
-ul,
-ol,
-p {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #1B1B1B;
+.section-form-register__button {
+  color: #FFFFFF;
+  background-color: #61A199;
+  border: 1px solid #61A199;
+  cursor: pointer;
+  padding: 12px 30px;
+  width: 237px;
+  height: 43px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.body {
-  height: 100%;
-  width: 100%;
-  font-weight: 400;
-  letter-spacing: 0em;
-  font-style: normal;
+@media (max-width: 375px) {
+  .section-form-register__button {
+    width: calc(100% - 40px);
+    margin: 25px 20px;
+  }
 }
 
-.body_overflow-none {
-  overflow: hidden;
+.section-form-register__button:disabled {
+  color: #61A199;
+  background-color: #FFFFFF;
+  border: 1px solid #61A199;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
 }
 
-/*# sourceMappingURL=App.css.map */
+.section-form-register__button:hover {
+  color: #61A199;
+  background-color: #FFFFFF;
+  border: 1px solid #61A199;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+/*# sourceMappingURL=ButtonContinue.css.map */
