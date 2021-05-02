@@ -34,7 +34,14 @@ const ButtonSubmit = (props) => {
         props.handleClick(1);
       }
       else {
-        history.push("/success");
+        localStorage.setItem("accessToken", result.accessToken);
+        localStorage.setItem("refreshToken", result.refreshToken);
+        history.push({
+          pathname: "./success",
+          state: {
+            update: false
+          }
+        });
       }
     });
 

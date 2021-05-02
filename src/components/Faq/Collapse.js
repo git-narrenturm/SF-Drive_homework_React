@@ -1,7 +1,7 @@
 import React from "react";
-import guidGenerator from "./GuidGenerator";
+import guidGenerator from "../../actions/guidGenerator";
 
-import "../css/Collapse.css";
+import "../../css/Collapse.css";
 
 import CollapseElement from "./CollapseElement";
 

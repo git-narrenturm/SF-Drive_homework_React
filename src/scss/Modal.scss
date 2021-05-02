@@ -1,0 +1,211 @@
+@import "variables";
+@import "mixins";
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1b1b1b;
+  opacity: 0.35;
+  z-index: 999;
+}
+
+.modal {
+  $padding-top: 25px;
+  $padding-left: 25px;
+  $padding-right: 25px;
+  $padding-bottom: 0px;
+
+  position: fixed;
+  z-index: 999;
+  max-width: 100%;
+  max-height: 100%;
+  padding: $padding-top $padding-right $padding-bottom $padding-left;
+  width: calc(504px - #{$padding-left + $padding-right});
+  height: calc(668px - #{$padding-top + $padding-bottom});
+  background-color: $white-100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+
+  $padding: 10px;
+  @include respond-to('xsmall') {
+    width: calc(375px - #{$padding * 2});
+    height: calc(100% - #{$padding * 2});
+    border-radius: 0px;
+    padding: 10px
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  $body-max-width: 350px;
+
+  &__body {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  &__wrapper {
+    width: $body-max-width;
+  }
+
+  &__footer {
+    width: 100%;
+    height: 80px;
+    margin: 40px 0px 0px;
+    border-top: 1px solid #dedbf1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button-back {
+    @include button($gray-dark, $white-100, $white-100);
+    margin-right: auto;
+  }
+
+  &__button-close {
+    @include button($gray-dark, $white-100, $white-100);
+    margin-left: auto;
+  }
+
+  &__button-register {
+    @include button($green, $white-100, $white-100);
+  }
+
+  &__button-login {
+    @include button($white-100, $green, $green);
+    font-size: 16px;
+    width: 126px;
+    height: 51px;
+    border-radius: 6px;
+    font-weight: 500;
+
+    @include respond-to('xsmall') {
+      width: 100%;
+    }
+  }
+}
+
+.modal-body {
+
+  &__header {
+    padding: 40px 0px 10px;
+  }
+
+  &__text {
+    padding: 10px 0px 30px;
+  }
+
+  &__error {
+    color: $red;
+    font-size: 14px;
+  }
+}
+
+.modal-section {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  &__input {
+    $padding-left: 12px;
+    $padding-right: 12px;
+    $height: 44px;
+
+    width: calc(100% - #{$padding-left + $padding-right});
+    max-width: calc(350px - #{$padding-left + $padding-right});
+    height: $height;
+    padding: 0px $padding-right 0px $padding-right;
+    background: $white-100;
+    border: 1px solid #d0cde1;
+    border-radius: 6px;
+    outline: 0;
+    margin-bottom: 20px;
+
+    &_error {
+      border: 1px solid $red;
+    }
+
+    &_no-border-right {
+      border-right: 0px;
+      border-radius: 6px 0px 0px 6px;
+
+      &_error {
+        border: 1px solid $red;
+        border-right: 0px;
+
+        &::placeholder {
+          color: $red;
+        }
+      }
+
+    }
+
+    &:focus {
+      $padding-top: 20px;
+      $padding-bottom: 8px;
+
+      height: calc(#{$height} - #{($padding-top + $padding-bottom)});
+      padding: $padding-top $padding-right $padding-bottom $padding-left;
+    }
+
+    &-placeholder {
+      display: none;
+      font-size: 9px;
+      color: #8d8b99;
+      position: absolute;
+      top: 7px;
+      left: 11px;
+
+      &_error {
+        color: $red;
+      }
+    }
+
+    &:focus ~ &-placeholder {
+      display: inline-block;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+  }
+
+  &__button-recover {
+    @include button($green, $white-100, $white-100);
+    border: 1px solid #d0cde1;
+    border-left: 0px;
+    border-radius: 0px 6px 6px 0px;
+    height: 46px;
+    font-size: 14px;
+    padding: 0px 12px;
+
+    &_error {
+      border: 1px solid $red;
+      border-left: 0px;
+    }
+  }
+
+}
+
+.hidden {
+  display: none;
+}

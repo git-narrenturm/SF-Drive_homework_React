@@ -1,11 +1,8 @@
 import React from 'react';
 
-import "../css/Team.css";
-
-
 const TeamMember = (props) => {
 
-  const teamMemberPhoto = require(`../css/img/${props.pictureName}`);
+  const teamMemberPhoto = require(`../../css/img/${props.pictureName}`);
 
   return (
     <div className={`section-team__item ${props.hasPaddingRight ? "section-team__item_lg-padding-right" : ""}`}>

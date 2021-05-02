@@ -22,48 +22,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-calendar:before {
-  content: "\e90c";
-  color: #61a199;
-}
-
-.icon-eye:before {
-  content: "\e90d";
-  color: #61a199;
-}
-
-.icon-dot:before {
-  content: "\e907";
-  color: #3f3d56;
-}
-
-.icon-dollar:before {
-  content: "\e908";
-  color: #fff;
-}
-
-.icon-money:before {
-  content: "\e909";
-  color: #fff;
-}
-
-.icon-percent:before {
-  content: "\e90a";
-  color: #fff;
-}
-
-.icon-sale:before {
-  content: "\e90b";
-  color: #fff;
-}
-
-.icon-close:before {
-  content: "\e906";
-}
-
 .icon-arrow:before {
-  content: "\e905";
-  color: #a0a7ad;
+  content: "\e910";
 }
 
 .icon-menu:before {
@@ -72,12 +32,10 @@
 
 .icon-facebook:before {
   content: "\e901";
-  color: #fff;
 }
 
 .icon-instagram:before {
   content: "\e902";
-  color: #fff;
 }
 
 .icon-skilldrive:before {
@@ -86,7 +44,34 @@
 
 .icon-vkontakte:before {
   content: "\e904";
-  color: #fff;
+}
+
+.icon-caret:before {
+  content: "\e905";
+}
+
+.icon-close:before {
+  content: "\e906";
+}
+
+.icon-dot:before {
+  content: "\e907";
+}
+
+.icon-dollar:before {
+  content: "\e908";
+}
+
+.icon-money:before {
+  content: "\e909";
+}
+
+.icon-percent:before {
+  content: "\e911";
+}
+
+.icon-sale:before {
+  content: "\e912";
 }
 
 /* end of icons */
@@ -256,7 +241,7 @@
 }
 
 .form-register__input_error {
-  border: 2px solid #EB5757;
+  border: 1px solid #EB5757;
 }
 
 .form-register__error-note {

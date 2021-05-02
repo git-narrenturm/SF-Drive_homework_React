@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+
+import ButtonLogin from "./Modal/ButtonShowLoginModal";
+import ButtonLogout from "./Modal/Authorization/ButtonLogout";
 
 import "../css/Header.css";
 
 const Header = () => {
+
+    console.log(localStorage.getItem("accessToken"));
 
   const handleClick = () => {
     const mobileMenu = document.querySelector(".menu__wrapper"),
@@ -16,7 +21,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__container">
-        <a href="#" className="header__logo icon-skilldrive"></a>
+        <a href="/" className="header__logo icon-skilldrive"></a>
         <div className="menu__wrapper">
           <nav className="navbar">
             <ul className="navbar__menu">
@@ -25,7 +30,7 @@ const Header = () => {
               <li className="navbar__item"><NavLink to="/faq" className="navbar__link">Частые вопросы</NavLink></li>
             </ul>
           </nav>
-          <button className="header__button">Войти</button>
+          <ButtonLogin />
         </div>
         <span className="header__menu-list" onClick={handleClick}></span>
       </div>

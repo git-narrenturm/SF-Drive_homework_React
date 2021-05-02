@@ -1,7 +1,8 @@
 @import "mixins";
 
 .section-register__button,
-.section-try__button {
+.section-try__button,
+.section-reset__button {
   @include button($white-100, $green, $green);
   padding: 12px 30px;
   width: 237px;

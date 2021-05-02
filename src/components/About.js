@@ -3,8 +3,8 @@ import teamSpirit from "../css/img/team_spirit.png";
 
 import "../css/About.css";
 
-import Contacts from "./Contacts";
-import Team from "./Team";
+import Contacts from "./About/Contacts";
+import Team from "./About/Team";
 
 const About = () => {
 

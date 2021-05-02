@@ -3,7 +3,7 @@ import questionPicture from "../css/img/questions.png";
 
 import "../css/Faq.css";
 
-import Collapse from "./Collapse";
+import Collapse from "./Faq/Collapse";
 
 const Faq = () => {
 

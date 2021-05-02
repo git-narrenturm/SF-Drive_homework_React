@@ -1,5 +1,6 @@
 .section-register__button,
-.section-try__button {
+.section-try__button,
+.section-reset__button {
   color: #FFFFFF;
   background-color: #61A199;
   border: 1px solid #61A199;
@@ -15,14 +16,16 @@
 
 @media (max-width: 375px) {
   .section-register__button,
-  .section-try__button {
+  .section-try__button,
+  .section-reset__button {
     width: calc(100% - 40px);
     margin: 25px 20px;
   }
 }
 
 .section-register__button:hover,
-.section-try__button:hover {
+.section-try__button:hover,
+.section-reset__button:hover {
   color: #61A199;
   background-color: #FFFFFF;
   border: 1px solid #61A199;

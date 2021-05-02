@@ -1,10 +1,12 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
-const salt = 10;
+const { SALT } = require("../auth/authConstants");
 
 const router = express.Router();
 
 const User = require('../db/usersSchema');
+
+const { generateToken, sendToken } = require("../auth/generateToken");
 
 router.get('/', async (req, res) => {
   const data = await User.find();
@@ -13,13 +15,10 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
 
-  console.log(req.body);
-
   const userData = req.body;
 
   for (const prop in userData) {
     if (userData[prop] == "") {
-      console.log(`${prop} must not be empty`);
       return res.status(400).send({
         success: false,
         error: { message: `${prop} must not be empty` }
@@ -29,11 +28,8 @@ router.post('/', async (req, res) => {
 
   const { personEmail, password } = userData;
 
-  //TODO check data ?
-
   //email must be unique
-
-  const recordExists = await User.findOne({ personEmail }) || false;
+  const recordExists = await User.findOne({ personEmail: personEmail }) || false;
   if (!!recordExists) {
     return res.status(400).send({
       success: false,
@@ -42,7 +38,7 @@ router.post('/', async (req, res) => {
   }
 
   //password hashing
-  userData.password = bcrypt.hashSync(password, bcrypt.genSaltSync(salt));
+  userData.password = bcrypt.hashSync(password, bcrypt.genSaltSync(SALT));
 
   //adding user to DB
   const newUser = new User(userData);

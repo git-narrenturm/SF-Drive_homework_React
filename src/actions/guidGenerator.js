@@ -5,4 +5,4 @@ const guidGenerator = () => {
   return (S4() + S4() + S4() + S4() + S4() + S4() + S4() + S4());
 }
 
-export default guidGenerator;
+module.exports = guidGenerator;

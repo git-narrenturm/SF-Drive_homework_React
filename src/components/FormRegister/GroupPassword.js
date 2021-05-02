@@ -1,12 +1,21 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 
 const GroupPassword = (props) => {
 
   const [errorMessage, setErrorMessage] = useState(null);
 
+  useEffect(() => {
+    setErrorMessage(props.errorMessage);
+  });
+
   //regular expression for password
   //minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:
   const regEx = new RegExp("[A-Za-z0-9]{8,}$");
+
+  const handleChange = (e) => {
+    setErrorMessage(null);
+    props.handleChange(e);
+  }
 
   const handleBlur = () => {
     const password = props.passwordValues[0];
@@ -24,12 +33,12 @@ const GroupPassword = (props) => {
         <div className="form-register__item">
           <label htmlFor="password" className="form-register__label">Придумайте пароль</label>
           <input
-            type="text"
+            type="password"
             id="password"
             name="password"
             className="form-register__input form-register__input_large"
             onBlur={handleBlur}
-            onChange={props.handleChange}
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -37,12 +46,12 @@ const GroupPassword = (props) => {
         <div className="form-register__item">
           <label htmlFor="confirmPassword" className="form-register__label">Повторите пароль</label>
           <input
-            type="text"
+            type="password"
             id="confirmPassword"
             name="confirmPassword"
             className="form-register__input form-register__input_large"
             onBlur={handleBlur}
-            onChange={props.handleChange}
+            onChange={handleChange}
           />
         </div>
         <div className="form-register__error-note">{errorMessage}</div>

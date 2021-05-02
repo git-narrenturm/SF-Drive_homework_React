@@ -13,7 +13,6 @@ const FormRegister = () => {
   const [errorMessageIsVisible, setErrorMessageVisibility] = useState(0);
 
   const handleClick = (value) => {
-    console.log(value);
     setErrorMessageVisibility(value)
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import guidGenerator from "./GuidGenerator";
+import guidGenerator from "../../actions/guidGenerator";
 
-import "../css/Team.css";
+import "../../css/Team.css";
 
 import TeamMember from "./TeamMember";
 
