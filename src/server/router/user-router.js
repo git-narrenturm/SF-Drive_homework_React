@@ -6,10 +6,15 @@ const router = express.Router();
 
 const User = require('../db/usersSchema');
 
-const { generateToken, sendToken } = require("../auth/generateToken");
+const verifyAccessToken = require("../middleware/verifyAccessToken");
 
-router.get('/', async (req, res) => {
+router.get('/', verifyAccessToken, async (req, res) => {
   const data = await User.find();
+  res.send(data);
+})
+
+router.get('/:id', verifyAccessToken, async (req, res) => {
+  const data = await User.findOne();
   res.send(data);
 })
 
