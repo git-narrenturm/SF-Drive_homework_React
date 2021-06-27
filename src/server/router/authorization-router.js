@@ -12,6 +12,8 @@ router.post("/", async (req, res) => {
 
   const { email, password } = loginData;
 
+  console.log(email, password);
+
   //check if login information is provided
   for (const prop in loginData) {
     if (loginData[prop] == "") {
