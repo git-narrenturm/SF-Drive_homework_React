@@ -6,13 +6,37 @@
 	},
 	"item": [
 		{
-			"name": "CREATE New User",
+			"name": "JWT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.accessToken)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"personName\": \"Иван Иванович Иванов\",\r\n    \"personBirthDate\": \"1982-01-01\",\r\n    \"personEmail\": \"test@test.com\",\r\n    \"personPhone\": \"79001234567\",\r\n    \"passportNumber\":\"2312343213\",\r\n    \"passportIssueDate\":\"2020-01-01\",\r\n    \"passportIssuer\":\"Отдел №3\",\r\n    \"passportIssuerNumber\":\"000124\",\r\n    \"drivingLicence\":\"1234567890\",\r\n    \"drivingLicenceIssueDate\":\"2020-12-01\",\r\n    \"password\":\"someeasypassword\"\r\n}",
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "{{loginEmail}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{loginPassword}}",
+							"type": "text"
+						}
+					],
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,11 +44,44 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/users",
+					"raw": "{{url}}/api/authorize",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8080",
+					"path": [
+						"api",
+						"authorize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Access-Token",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}/api/users",
+					"host": [
+						"{{url}}"
+					],
 					"path": [
 						"api",
 						"users"
@@ -34,19 +91,40 @@
 			"response": []
 		},
 		{
-			"name": "GET Users",
+			"name": "GET user by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Access-Token",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/api/users",
+					"raw": "{{url}}/api/users/60d78af92106bb33fcbe3294",
 					"host": [
-						"localhost"
+						"{{url}}"
 					],
-					"port": "8080",
 					"path": [
 						"api",
-						"users"
+						"users",
+						"60d78af92106bb33fcbe3294"
 					]
 				}
 			},
